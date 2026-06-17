@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architect Client Demo Portal</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-card {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 360px;
+        }
+        h2 { margin-top: 0; color: #18181b; font-weight: 400; letter-spacing: -0.5px; }
+        p { color: #71717a; font-size: 14px; margin-bottom: 24px; }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 16px;
+            border: 1px solid #e4e4e7;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #18181b;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        button:hover { background-color: #27272a; }
+        .error { color: #dc2626; font-size: 14px; margin-top: 10px; display: none; }
+    </style>
+</head>
+<body>
 
+<div class="login-card">
+    <h2>Client Portal</h2>
+    <p>Enter your demo credentials to view the concept site.</p>
+    
+    <input type="text" id="username" placeholder="Username (demo)">
+    <input type="password" id="password" placeholder="Password (arch2026)">
+    <button onclick="checkLogin()">Access Demo</button>
+    
+    <div id="error-msg" class="error">Invalid demo credentials. Please try again.</div>
+</div>
+
+<script>
+    function checkLogin() {
+        const user = document.getElementById('username').value;
+        const pass = document.getElementById('password').value;
+        
+        // Simple client-side check for demo purposes
+        if (user === 'demo' && pass === 'arch2026') {
+            // Redirect to your actual demo home page or dashboard
+            window.location.href = 'dashboard.html'; 
+        } else {
+            document.getElementById('error-msg').style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
